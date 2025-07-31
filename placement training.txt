@@ -1,0 +1,264 @@
+day1:
+register-> to store data in cache
+auto->the os will hold the authority to decide whether cache or ram
+volatile-> to store in ram
+(extern,sizeof, return 0 in int main(),const int a=0,https://automatetheboringstuff.com/, *ptr->value: ptr->about address,
+const int*,const ptr=&a)
+===================================================================================================
+
+day4:
+1.print hello world without ;
+->format and unformated ip/op
+   #include <stdio.h>
+
+int main() {
+    // Write C code here
+   int a=0;
+   int const b=7;
+   if(a=4)
+   {
+       printf("true value\n");
+   }
+   printf("%d",a);
+
+    return 0;
+}
+#include <stdio.h>
+
+int main() {
+    // Write C code here
+   int a=printf("hello");
+   printf("%d",a);
+}
+point: programiz c guide
+qst:without using logical or relational operators code marks and grade
+funneling: 
+radic sort:
+qst: for n=3 o/p->
+3 2 1 2 3
+   2 1 2
+      1
+   2 1 2
+3 2 1 2 3
+-----------------------------------------------------------------------------------------------------------------------------
+1.create a function that returns LCM of 2 numbers.
+->int lcm(int a,int b)
+    {
+        int max;
+        if(a>b)
+        max=a;
+        else
+        max=b;
+        int l=max;
+        while(1)
+        {
+            if(l%a==0 && l%b==0)
+            {
+                return l;}
+            else{
+                l=l+max;
+            }
+        }
+        
+    }
+
+int main() 
+{
+    int a,b;
+    int ans;
+   
+    printf("enter the 2 numbers");
+    scanf("%d%d",&a,&b);
+    ans=lcm(a,b);
+    printf("%d",ans);
+   
+}
+
+2.Example:
+Input:
+78
+Explanation:
+
+78 + 87 = 165
+
+165 + 561 = 726
+
+726 + 627 = 1353
+
+1353 + 3531 = 4884 ✅ Palindrome
+->#include <stdio.h>
+
+int main()
+{
+    int number;
+    int rev;
+   
+    printf("enter the number\n");
+    scanf("%d", &number);
+    printf("the number entered is %d\n", number);
+
+x:
+    rev = 0; // initialize rev before calculating reverse
+    int temp = number; // store original number for reverse comparison
+
+    while (temp > 0)
+    {
+        int digit = temp % 10;
+        rev = rev * 10 + digit;
+        temp = temp / 10;
+    }
+
+    if (number == rev)
+    {
+        printf("the number %d is palindrome\n", number);
+        printf("the reverse of number is %d\n", rev);
+    }
+    else
+    {
+        int sum = number + rev;
+        number = sum;
+        goto x;
+    }
+
+    return 0;
+}
+
+
+3. leap year
+->int main()
+{
+    int year;
+    printf("enter the year\n");
+    scanf("%d",&year);
+    if((year%400==0 && year%100==0) || (year%100!=0 && year%4==0) )
+    {
+        printf("leap year");
+    }
+    else
+    {
+        printf("not a leap year");
+    }
+===================================================================================================
+day 5:
+
+1. 2.3=> 2 hr 18 mins no typecasting,built-in and functions
+-> int main() {
+    // Write C code here
+   int count=0;
+   float time=4.3;
+   while(time>=1)
+   {
+       count++;
+       time--;
+   }
+   printf("%d hours %f min",count,time*60);
+
+2.write a program to print the sum of 3rd and 4th digit of any number entered by the user(array cannot be used,3rd and 4th from starting).
+->#include <stdio.h>
+int main() {
+  int a,digits;
+ int num=234561;
+ if(num<100)
+ printf("0");
+ else if(num<1000)
+  printf("%d",num%10);
+ else
+  {
+ while(num>9999)
+ {  num=num/10;        }
+        // printf("%d",num%10+num/10%10);
+        printf("%d",num%10+num/10%10);
+    }
+
+ 
+3.Input Format:
+Three space-separated integers:
+year month first_sunday_date
+
+Output Format:
+Print a single integer — the total number of Sundays in that month.
+-> int y,m,fs;
+    scanf("%d%d%d
+
+4."aabbbccaabb"
+    o/p: a:2,b:3,c:2,b:2
+->char str={"aabbbccaabb"};
+int count =1;
+char curr=str[0];
+for(int i=1;i<=strlen(str);i++)
+{
+	if(str[i]==curr)
+	count++;
+	else
+	{ printf("%c%d",curr,count);
+curr=str[i];
+count=1;}}}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+session 3:
+1.array:[7,7,7,3,7,7] find the unique element
+2.[1,2,3] in the array find if there is any unique element or not.
+===================================================================================================
+
+day 6: session2
+
+1.i/p:120 o/p:2 2 2 3 5
+->int main() 
+{
+   int number,i=2;
+   printf("enter the number\n");
+   scanf("%d",&number);
+   while(number>1)
+   {
+       while(number%i==0)
+       {
+           printf("%d ",i);
+           number=number/i;
+       }
+       i++;
+===================================================================================================
+morescode:competative coding
+
+1.bicel problem:{8,3,4,1,7,11,5} consider the array as gold prices in week. At what price point u buy and sell the gold. max profit is 10rs.
+   if i cange the 8->15. still u buy and sell at 1 and 11. {10,4,9,1,3,2}
+   write a function to accept array of gold prices and return maximum profit that can be made with one buy transaction    and with one sell transaction.
+-> int BuySellFunction(int goldPrices,int Len)
+    int minvalue=goldPrices[0];
+    int maxProfit=0;
+    for(int i=0;i<len;i++)
+    {
+	if(goldPrices[i]<minValue)	
+	{
+		minValue=goldPrices[i];
+	}
+	profit=goldPrices[i]-minValue;
+	if(profit>maxProfit)
+	{	maxProfit=profit;  }
+
+2.A group of football players are sitting in a circle with the jercy numbers 10,20,30,40,50 and their corresponding seat numbers are 10->1,20->2,30->3,40->4,50->5. The footballers shift their seat positions to the right hand side for n. Print the seating arrangement of the footballers after the n shifts.(write a pointer saying that declaration of the secondary array is not allowed).
+->int main(){
+	int arr[]={4,5,1,2,3};
+	int len=sizeof(arr)/sizeof(arr[0]);
+	int last=arr[len-1];
+	for(int i=len-1;i>=0;i--)
+	{ arr[i]=arr[i-1]; }
+	arr[0]=last;}
+	for(int x=0;x<len;x++)
+	{	
+		printf("%d",arr[x]); }
+
+3.write a function to accept 2 positive integer vaalues and return the count of the carry values that is generated in the process of addition.
+I/P-> 	int n1=;
+	int n2=567;
+	int last1,last2,sum,carryCount=0,carryFlag=0;
+	while(n1!=0||n2!=0)
+	{
+		last1=n1%10;
+		last2=n2%10;
+		sum=last1+last2+carryFlag;
+		if(sum>9)
+		{
+			carryCount++;
+			carryFlag=1; }
+		else{ carryFlag=0; }; n1/=10; n2/=10; }
+		

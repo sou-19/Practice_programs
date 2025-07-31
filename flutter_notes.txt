@@ -1,0 +1,148 @@
+touch- linux command to create file
+rm- to remove file
+$ - for taking input from variable
+print- to print 
+1.no null value is allowed. if you want null to be implemented use null safty by putting ?(String? name)
+2.to give placeholder value use ??(String? address;  print(address=....)
+var - assign any type of value(it is not type safe bcoz we can change value)
+dynamic - assign any type of value
+"the difference is var type decalred is cannot be changed. but dynamic datatype can be changed"
+final - no modification of value fixed to variable
+const - no modification of value fixed to variable
+"difference btw const and final is const is complile time checker and final is the runtime checker"
+list:
+void main(){
+List name=["a","b",90,true];
+print(name);
+}
+what if u want to only store name?
+->List<String>
+set: no dublicate elements
+Set <String> name={"a","b","a"};
+print(name);
+dart first.dart
+{a, b}
+
+for loop:
+for(var i=0; i<name.length;i++)
+  print(name[i]);
+or
+for(var name in name)
+  print(name);
+ex:String name="sambhram";
+String aa= "";
+for(var i=name.length-1;i>=name.length/2;i--)
+{
+ aa += name[i];
+ 
+}
+print(aa);
+3.Map
+Map<String,int> details={
+"s":200,
+"d":40,
+"c": 20
+};
+details["d"]=900;
+print(details);
+
+4.method
+void main(){
+display()
+{
+  print("hello dart" );
+  
+}
+display();
+4.required: for return type to function
+void main(){
+ String student({required String name, required int rollno}){
+  return "my name $name and rollno is $rollno";
+
+ }
+var result=student(name:"a",rollno:60);
+print(result);
+
+}
+or if we need to return more that 1 value of return type
+void main(){
+ (String,int) student({required String name, required int rollno}){
+  return (name,rollno);
+
+ }
+var (name,rollno)=student(name:"a",rollno:60);
+print(name);
+print(rollno);
+
+#how to return function
+void main(){
+ Function display(){
+  return(){
+    print("hello");
+  };
+ }
+ var myfun= display();
+ myfun();
+
+1.anyanimous func:function without name
+void main(){
+ var name=(){//name is the variable to nameless function
+  print("hello");
+
+ };
+name();
+}
+
+2.arrow func: function can be written in 1 line and no return type needed
+void main(){
+ name()=>print("hello");
+ name();
+}
+by passing values,
+void main(){
+ name(x,y)=>print(x+y);
+ name(10,20);
+}
+--------------------------------
+1.to create project type:flutter create project name
+2.2 classes in flutter
+statful and ststeless->
+1.snackbar
+2.bottomnavigation bar
+3.drawers
+in web(hea) 
+4.json format
+5.pub.dev-> for getting different pckages(http)ctrl+shift+p=> dart:add dependencies=>(http)
+6.listviewbuilder=>to display multiple values in the list
+#how to copy project from github
+1.git clone(go to git hub account ad copy link)
+2.flutter pub get
+3.flutter run
+------------------------------------------------------------
+1.open firebase
+2.go to console on top right
+3.create new project
+4.enter your project name
+5.disable 2 options
+6. click create project
+
+after creating the project
+part 1:authentication
+part2:cloud firestore
+
+how to connect fire base with flutter
+1.go to home screen in firebase
+2.wb
+3.home screen
+5.script tag
+6.copy the code
+
+point to remember:
+inside read function write document snapshot to read the updated data from the fire base. async and await is used to maintain the flow of running when there is network type of error.
+
+
+
+
+
+
+
