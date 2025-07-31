@@ -246,7 +246,6 @@ morescode:competative coding
 	for(int x=0;x<len;x++)
 	{	
 		printf("%d",arr[x]); }
-
 3.write a function to accept 2 positive integer vaalues and return the count of the carry values that is generated in the process of addition.
 I/P-> 	int n1=;
 	int n2=567;
@@ -259,6 +258,8 @@ I/P-> 	int n1=;
 		if(sum>9)
 		{
 			carryCount++;
+			carryFlag=1; }
+		else{ carryFlag=0; }; n1/=10; n2/=10; }
 
 4.Integer to Roman. 
 		int arr[]={1000,900,500,400,100,90,50,40,10,9,5,4,1};
@@ -267,6 +268,11 @@ I/P-> 	int n1=;
 		for(int i=0;i<13;i++)
 		{	while(input>=arr[i])
 			{	printf("%s",symbols[i]); input=input-arr[i]; }
-			carryFlag=1; }
-		else{ carryFlag=0; }; n1/=10; n2/=10; }
-		
+
+5. print the corresponding excel colunm name for the given input number.
+	int main()
+	{	int input=28;
+		while(input>0){
+		rem=(input-1)%26; temp[i]='A'+rem; i++; input=(input-1)/26; }
+		for(int x=2; x>=0; x--){
+		printf("%c", temp[x]); } }; 
